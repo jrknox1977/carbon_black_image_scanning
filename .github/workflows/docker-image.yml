@@ -10,16 +10,14 @@ jobs:
 
   build:
     env:
-      TAG: ubuntu20-nginx
+      TAG: xmrig/xmrig
 
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
-    
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag $TAG
+
       
     - name: Download cbctl binary
       run: wget https://setup.containers.carbonblack.io/cbctl/v1.9.1/linux/cbctl && chmod +x cbctl
