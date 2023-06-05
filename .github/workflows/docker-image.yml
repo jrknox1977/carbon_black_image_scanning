@@ -27,7 +27,7 @@ jobs:
     - name: Run Image Scan with cbctl binary
       run: ./cbctl image scan $TAG 
     
-    - name: Run Image Scan on image with "MALWARE"
+    - name: Run Image Scan on image with "MALWARE" --cb-api-key ${{ secrets.CBCTL_CB_API_KEY }} --cb-api-id ${{ secrets.CBCTL_CB_API_ID }}  --org-key ${{ secrets.CBCTL_ORG_KEY }} --saas-url ${{ secrets.CBCTL_SAAS_URL }}
       run: ./cbctl image scan xmrig/xmrig --cb-api-key ${{ secrets.CBCTL_CB_API_KEY }} --cb-api-id ${{ secrets.CBCTL_CB_API_ID }}  --org-key ${{ secrets.CBCTL_ORG_KEY }} --saas-url ${{ secrets.CBCTL_SAAS_URL }}
 
     
